@@ -1,0 +1,6 @@
+# Copie para terraform.tfvars (gitignored) e preencha com senhas reais.
+# Nunca commite o terraform.tfvars preenchido.
+
+auth_db_password      = "troque-por-uma-senha-forte"
+flags_db_password     = "troque-por-uma-senha-forte"
+targeting_db_password = "troque-por-uma-senha-forte"

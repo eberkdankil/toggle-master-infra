@@ -1,0 +1,13 @@
+# Copie para terraform.tfvars (gitignored) e preencha com valores reais.
+# Nunca commite o terraform.tfvars preenchido.
+
+master_key = "local-master-key"
+
+# service_api_key já tem um default em variables.tf (semeado no init.sql do
+# postgres-auth) — só sobrescreva aqui se você alterar a chave/hash lá também.
+# service_api_key = "tm_key_e5873e855f9948ea109faecc22ca0f4f0dd0885e80c51e8f5d46e1b14e645bfb"
+
+# Opcionais — só mude se tiver alterado as senhas no docker-compose.infra.yml
+# auth_db_password       = "auth_pass"
+# flags_db_password      = "flags_pass"
+# targeting_db_password  = "targeting_pass"

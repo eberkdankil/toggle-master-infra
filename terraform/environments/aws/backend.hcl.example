@@ -1,0 +1,11 @@
+# Copie para backend.hcl (gitignored) e ajuste o nome do bucket (ver
+# comandos de bootstrap que passei no chat — nome de bucket S3 é global,
+# então "togglemaster-tfstate" provavelmente já está em uso por outra conta).
+#
+# Uso: terraform init -backend-config=backend.hcl
+
+bucket       = "togglemaster-tfstate-TROQUE-AQUI"
+key          = "aws/terraform.tfstate"
+region       = "us-east-1"
+use_lockfile = true
+encrypt      = true
