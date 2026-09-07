@@ -51,3 +51,13 @@ module "data_services" {
 module "ecr" {
   source = "../../modules/ecr"
 }
+
+# ArgoCD + Application apontando pro repo de GitOps (repositório público,
+# sem credencial necessária — confirmado via API do GitHub).
+module "argocd" {
+  source = "../../modules/argocd"
+
+  gitops_repo_url = var.gitops_repo_url
+  aws_region      = var.aws_region
+  cluster_name    = module.eks.cluster_name
+}

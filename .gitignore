@@ -8,5 +8,10 @@ backend.hcl
 crash.log
 crash.*.log
 
+# Gerados pelo módulo argocd (local_file + kubeconfig temporário via
+# local-exec) — nunca precisam ir pro Git.
+terraform/modules/argocd/.generated-*.yaml
+terraform/modules/argocd/.kubeconfig-*
+
 # .terraform.lock.hcl é rastreado de propósito (versão do provider
 # reprodutível entre sua máquina e o CI) — não ignorar.

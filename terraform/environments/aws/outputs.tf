@@ -59,3 +59,13 @@ output "ecr_repository_urls" {
   description = "Nome do repositório -> URL completa. Usar essas URLs no docker tag/push e nos secrets/vars do CI/CD."
   value       = module.ecr.repository_urls
 }
+
+output "argocd_get_admin_password" {
+  description = "Rode este comando (depois do kubectl apontar pro cluster) pra pegar a senha inicial do usuário admin do ArgoCD."
+  value       = "kubectl -n ${module.argocd.namespace} get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d"
+}
+
+output "argocd_port_forward" {
+  description = "Acesso à UI do ArgoCD (sem Ingress configurado ainda)."
+  value       = "kubectl -n ${module.argocd.namespace} port-forward svc/argocd-server 8080:443"
+}

@@ -48,3 +48,9 @@ variable "targeting_db_password" {
   type      = string
   sensitive = true
 }
+
+variable "gitops_repo_url" {
+  description = "Repo (público) com a pasta gitops/ que o ArgoCD sincroniza."
+  type        = string
+  default     = "https://github.com/eberkdankil/toggle-master-tc2-fiap.git"
+}
