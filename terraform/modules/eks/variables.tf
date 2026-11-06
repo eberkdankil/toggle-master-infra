@@ -24,7 +24,10 @@ variable "instance_types" {
 
 variable "desired_size" {
   type    = number
-  default = 2
+  # Bump de 2 pra 3 (Fase 4 — observabilidade): kube-prometheus-stack + Loki
+  # + 2x OTel Collector somam recurso suficiente pra deixar 2 nodes
+  # t3.medium sem capacidade.
+  default = 3
 }
 
 variable "min_size" {
